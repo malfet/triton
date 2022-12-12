@@ -43,6 +43,8 @@ bool maybeSharedAllocationOp(Operation *op);
 
 bool maybeAliasOp(Operation *op);
 
+bool supportMMA(triton::DotOp op, int version);
+
 std::string getValueOperandName(Value value, AsmState &state);
 
 template <typename T_OUT, typename T_IN>

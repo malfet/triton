@@ -74,6 +74,8 @@ class Autotuner(KernelInterface):
                            for config in pruned_configs}
                 bench_end = time.time()
                 self.bench_time = bench_end - bench_start
+                for config, ttime in timings.items():
+                    print(f"config: {config}, time: {ttime}")
                 self.cache[key] = builtins.min(timings, key=timings.get)
                 self.hook(args)
                 self.configs_timings = timings
